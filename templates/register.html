@@ -1,0 +1,45 @@
+
+{% extends 'common.html' %}
+
+{% block title %}
+Home page
+{% endblock title %}
+
+{% block body %}
+
+<link href="static/css/register.css" rel="stylesheet" />
+{% for message in messages.get %}
+<h5 class="cd">{{ message }}</h5>
+{% endfor %}
+
+
+<div class="ab">
+<section class="wrapper">
+  <div class="form signup">
+    <header>
+      <div class="main">
+        <div class="logo">
+          <img
+            src="https://play-lh.googleusercontent.com/zNCkWerOvcmjkk6AKpuy0oJO4szR2G_CgEKgNSw0wm6LPkzTgfhiW3e6slJr00UV9Q"
+            height="100" width="100">
+        </div>
+        Signup
+      </div>
+
+    </header>
+    <form method="POST" action="/register">
+      {% csrf_token %}
+      <input type="username" id="username" name="username" placeholder="Username" required />
+      <input type="text" id="email" name="email" placeholder="Email address" required />
+      <input type="password" id="password1" name="password1" placeholder="Password" required />
+      <input type="password" id="password2" name="password2" placeholder="Password" required />
+      <div class="checkbox">
+        <input type="checkbox" id="signupCheck" />
+        <label for="signupCheck">I accept all terms & conditions</label>
+      </div>
+      <input type="submit" value="Signup" />
+    </form>
+  </div>
+
+{% endblock body %}
+
