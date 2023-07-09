@@ -21,9 +21,10 @@
     justify-content: center;
     background: #f0faff;
   }
-  
+
   .cd{
     color: red;
+    justify-content: center;
   }
   .wrapper {
     position: relative;

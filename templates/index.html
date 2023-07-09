@@ -6,8 +6,6 @@ Home page
 
 {% block body %}
 
-
-aaaa
 <style>
     .mar {
         color : red; 
@@ -21,6 +19,14 @@ aaaa
         Stay alert and safe!
     </b>
 </marquee>
+
+<div class="col-xl-12 text-center">
+  {% if user.is_authenticated %}
+    <h2><b>Welcome, {{ user.username }} to the best website in the world!!!</b></h2>
+  {% else %}
+    <h2><b>Welcome to the best website in the world!!!</b></h2>
+  {% endif %}
+</div>
 
 {% endblock body %}
 
